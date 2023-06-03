@@ -48,11 +48,11 @@ from keras.optimizers import Adam
 model = Sequential()
 model.add(Conv2D(filters = 64, kernel_size = (3,3), activation = 'relu', input_shape = Input_shape))
 model.add(MaxPooling2D(2,2))
-model.add(Dropout(0.4))
+model.add(Dropout(0.2))
 
 model.add(Conv2D(filters = 64, kernel_size = (3,3), activation = 'relu'))
 model.add(MaxPooling2D(2,2))
-model.add(Dropout(0.4))
+model.add(Dropout(0.2))
 
 model.add(Flatten())
 
@@ -68,5 +68,5 @@ model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = [
 
 ## Training the model
 ```python
-model.fit(X_train, y_train, batch_size = 32, epochs = 10, shuffle = True)
+model.fit(X_train, y_train, batch_size = 16, epochs = 20, shuffle = True)
 ```
